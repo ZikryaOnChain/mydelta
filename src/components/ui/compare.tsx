@@ -115,17 +115,9 @@ export const Compare = ({
   const handleMouseUp = useCallback(() => handleEnd(), [handleEnd]);
   const handleMouseMove = useCallback(
     (e: MouseEvent) => {
-      if (!sliderRef.current) return;
-      if (slideMode === "hover" || (slideMode === "drag" && isDragging)) {
-        const rect = sliderRef.current.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const percent = (x / rect.width) * 100;
-        requestAnimationFrame(() => {
-          setSliderXPercent(Math.max(0, Math.min(100, percent)));
-        });
-      }
+      handleMove(e.clientX);
     },
-    [slideMode, isDragging]
+    [handleMove]
   );
 
   const handleTouchStart = useCallback(
