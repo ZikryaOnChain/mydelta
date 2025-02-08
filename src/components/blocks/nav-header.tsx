@@ -10,6 +10,14 @@ const navLinks = [
   { name: "GET QUOTE", href: "/quote" },
 ];
 
+type Position = {
+  left: number;
+  width: number;
+  opacity: number;
+};
+
+type SetPositionType = React.Dispatch<React.SetStateAction<Position>>;
+
 function NavHeader() {
   const [position, setPosition] = useState({ left: 0, width: 0, opacity: 0 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -84,7 +92,7 @@ const Tab = ({
 }: {
   children: React.ReactNode;
   href: string;
-  setPosition: any;
+  setPosition: SetPositionType;
 }) => {
   const ref = useRef<HTMLLIElement>(null);
   return (
@@ -112,7 +120,7 @@ const Tab = ({
   );
 };
 
-const Cursor = ({ position }: { position: any }) => {
+const Cursor = ({ position }: { position: Position }) => {
   return (
     <motion.li
       animate={position}

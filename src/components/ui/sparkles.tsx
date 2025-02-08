@@ -6,6 +6,7 @@ import type { Container, SingleOrMultiple } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { cn } from "@/lib/utils";
 import { motion, useAnimation } from "framer-motion";
+import { type ComponentProps } from "react";
 
 type ParticlesProps = {
   id?: string;
@@ -21,4 +22,8 @@ type ParticlesProps = {
 
 export const SparklesCore = (props: ParticlesProps) => {
   // ... rest of the sparkles code you provided ...
-}; 
+};
+
+export function Sparkles(props: ComponentProps<"div">) {
+  return <div {...props} />;
+} 

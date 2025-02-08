@@ -2,7 +2,6 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import Image from "next/image";
-import Link from "next/link";
 
 export const metadata = {
   title: "Our Services - Delta Home Solutions",

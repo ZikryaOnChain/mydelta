@@ -1,4 +1,4 @@
-import Link from "next/link";
+// import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
@@ -44,7 +44,7 @@ export default function QuoteConfirmationPage({
               Thank You {firstName}!
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              We've received your quote request and will get back to you within 24
+              We&apos;ve received your quote request and will get back to you within 24
               hours with a detailed quote.
             </p>
           </div>
@@ -59,15 +59,15 @@ export default function QuoteConfirmationPage({
                 </li>
                 <li className="flex items-start">
                   <span className="font-semibold mr-2">2.</span>
-                  We'll prepare a customized quote based on your needs
+                  We&apos;ll prepare a customized quote based on your needs
                 </li>
                 <li className="flex items-start">
                   <span className="font-semibold mr-2">3.</span>
-                  You'll receive the quote via email within 24 hours
+                  You&apos;ll receive the quote via email within 24 hours
                 </li>
                 <li className="flex items-start">
                   <span className="font-semibold mr-2">4.</span>
-                  We'll follow up with a call to discuss any questions
+                  We&apos;ll follow up with a call to discuss any questions
                 </li>
               </ol>
             </div>
