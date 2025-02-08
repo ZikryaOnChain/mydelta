@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 // Use Next.js built-in types
 type Props = {
-  params: {}
+  params: Record<string, never>  // Better than empty object {}
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
