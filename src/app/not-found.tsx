@@ -1,5 +1,8 @@
-import { Button } from "../components/ui/button";
+"use client";
+
+import { buttonVariants } from "../components/ui/button";
 import { Container } from "../components/ui/container";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -9,9 +12,9 @@ export default function NotFound() {
         <p className="text-gray-600">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
-        <Button onClick={() => window.location.href = "/"}>
+        <Link href="/" className={buttonVariants({ variant: "default" })}>
           Return Home
-        </Button>
+        </Link>
       </div>
     </Container>
   );

@@ -1,31 +1,27 @@
+"use client";
+
 import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
-export const metadata = {
-  title: "Quote Request Received - Delta Home Solutions",
-  description: "Thank you for requesting a quote from Delta Home Solutions",
-};
+export default function QuoteConfirmationPage() {
+  const [firstName, setFirstName] = useState('there');
 
-// Remove custom Props type and use Next.js's built-in types
-export default async function QuoteConfirmationPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
-  const name = typeof searchParams.name === 'string' 
-    ? searchParams.name 
-    : 'there';
-
-  const firstName = name.split(' ')[0];
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name') || 'there';
+    setFirstName(name.split(' ')[0]);
+  }, []);
 
   return (
     <section className="bg-gray-50 min-h-[60vh] flex items-center">
       <Container>
         <div className="max-w-2xl mx-auto text-center">
           <div className="mb-8">
-            <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+            <div className="mx-auto w-16 h-16 bg-[#1FB8BF]/10 rounded-full flex items-center justify-center mb-4">
               <svg
-                className="w-8 h-8 text-green-500"
+                className="w-8 h-8 text-[#1FB8BF]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -75,12 +71,26 @@ export default async function QuoteConfirmationPage({
                 Have questions in the meantime? Feel free to contact us.
               </p>
               <div className="space-x-4">
-                <Button as="a" href="tel:+1234567890" variant="outline">
+                <a 
+                  href="tel:+1234567890"
+                  className={buttonVariants({
+                    variant: "default",
+                    size: "lg",
+                    className: "min-w-[160px]"
+                  })}
+                >
                   Call Us
-                </Button>
-                <Button as="a" href="/" variant="secondary">
+                </a>
+                <Link 
+                  href="/"
+                  className={buttonVariants({
+                    variant: "outline",
+                    size: "lg",
+                    className: "min-w-[160px]"
+                  })}
+                >
                   Return Home
-                </Button>
+                </Link>
               </div>
             </div>
           </div>

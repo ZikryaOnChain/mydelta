@@ -3,7 +3,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function AnimatedHero() {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -65,20 +67,30 @@ export function AnimatedHero() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <Button
-              as="a"
+            <Link
               href="/quote"
-              className="bg-[#1FB8BF] hover:bg-[#1FB8BF]/90 text-white px-8 py-6 rounded-full text-lg min-w-[200px]"
+              className={cn(
+                buttonVariants({
+                  variant: "default",
+                  size: "lg",
+                }),
+                "px-8 py-6 text-lg min-w-[200px]"
+              )}
             >
               Get a Free Quote
-            </Button>
-            <Button
-              as="a"
+            </Link>
+            <Link
               href="/services"
-              className="px-8 py-6 rounded-full border-2 border-[#1FB8BF] bg-black text-white hover:bg-[#1FB8BF] transition-colors text-lg min-w-[200px]"
+              className={cn(
+                buttonVariants({
+                  variant: "outline",
+                  size: "lg",
+                }),
+                "px-8 py-6 text-lg min-w-[200px] bg-black hover:bg-[#1FB8BF]"
+              )}
             >
               Our Services
-            </Button>
+            </Link>
           </div>
         </div>
       </div>

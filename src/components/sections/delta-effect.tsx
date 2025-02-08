@@ -1,70 +1,68 @@
 "use client";
 
-// import { Container } from "../ui/container";
-import { Card, CardContent } from "../ui/card";
+import { Container } from "@/components/ui/container";
 import { Compare } from "@/components/ui/compare";
 
 const features = [
   {
-    title: "Professional Excellence",
-    description: "Trained experts using industry-leading equipment and techniques",
-    icon: "🏆",
+    icon: "🏠",
+    title: "Professional Service",
+    description: "Expert technicians delivering quality results",
   },
   {
-    title: "Reliable Service",
-    description: "On-time arrival and thorough completion of every project",
-    icon: "⏰",
+    icon: "⚡",
+    title: "Fast Response",
+    description: "Quick turnaround on all service requests",
   },
   {
-    title: "Eco-Friendly",
-    description: "Environmentally conscious cleaning solutions and practices",
-    icon: "🌱",
+    icon: "💪",
+    title: "Reliable Results",
+    description: "Consistent quality you can count on",
   },
   {
-    title: "Satisfaction Guaranteed",
-    description: "Your complete satisfaction is our top priority",
-    icon: "✨",
+    icon: "🌟",
+    title: "Customer Satisfaction",
+    description: "Your happiness is our top priority",
   },
 ];
 
 export function DeltaEffect() {
   return (
-    <section className="py-20 bg-gray-50" id="coverage">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            The Delta Effect
+    <section className="py-16 md:py-24">
+      <Container>
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Experience the Delta Effect
           </h2>
           <p className="text-xl text-gray-600">
-            Experience the difference of professional home maintenance services that go above and beyond.
+            See the remarkable difference our services make. Drag the slider to
+            reveal the transformation.
           </p>
         </div>
 
-        {/* Comparison Slider */}
         <div className="flex justify-center mb-16">
-          <Compare
-            firstImage="/images/deltaeffect/delta-effect-before.jpg"
-            secondImage="/images/deltaeffect/delta-effect-after.jpg"
-            className="h-[300px] w-[500px] md:h-[400px] md:w-[700px]"
-            firstImageClassName="object-cover"
-            secondImageClassname="object-cover"
-            slideMode="hover"
-            showHandlebar={true}
-          />
+          <div className="aspect-[4/3] relative w-[800px] overflow-hidden rounded-xl">
+            <Compare
+              firstImage="/images/deltaeffect/delta-effect-before.jpg"
+              secondImage="/images/deltaeffect/delta-effect-after.jpg"
+              className="w-full h-full"
+              firstImageClassName="object-cover w-full h-full"
+              secondImageClassname="object-cover w-full h-full"
+              showHandlebar={true}
+            />
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature) => (
-            <Card key={feature.title}>
-              <CardContent className="text-center p-6">
-                <span className="text-4xl mb-4 block">{feature.icon}</span>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </CardContent>
-            </Card>
+            <div key={feature.title} className="text-center p-6">
+              <span className="text-4xl mb-4 block">{feature.icon}</span>
+              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p className="text-gray-600">{feature.description}</p>
+            </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 } 

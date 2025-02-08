@@ -1,78 +1,15 @@
-import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
+"use client";
+
 import { services } from "@/data/services";
-import Image from "next/image";
+import { ServiceContent } from "@/components/sections/service-content";
 import { notFound } from "next/navigation";
+import { useParams } from "next/navigation";
 
-interface ServicePageProps {
-  params: {
-    id: string;
-  };
-}
-
-export function generateStaticParams() {
-  return services.map((service) => ({
-    id: service.id,
-  }));
-}
-
-export function generateMetadata({ params }: ServicePageProps) {
-  const service = services.find((s) => s.id === params.id);
-  if (!service) return {};
-
-  return {
-    title: `${service.title} - Delta Home Solutions`,
-    description: service.description,
-  };
-}
-
-export default function ServicePage({ params }: ServicePageProps) {
-  const service = services.find((s) => s.id === params.id);
+export default function ServicePage() {
+  const params = useParams();
+  const id = typeof params.id === 'string' ? params.id : '';
+  const service = services.find((s) => s.id === id);
   if (!service) notFound();
 
-  return (
-    <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={service.image}
-            alt={service.title}
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gray-900/60" />
-        </div>
-
-        <Container className="relative z-10 py-20 md:py-32">
-          <div className="max-w-3xl text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {service.title}
-            </h1>
-            <p className="text-xl text-gray-200 mb-8">{service.description}</p>
-            <Button as="a" href={`/quote?service=${service.id}`} size="lg">
-              Get a Free Quote
-            </Button>
-          </div>
-        </Container>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-16">
-        <Container>
-          <h2 className="text-3xl font-bold mb-12 text-center">
-            Why Choose Our {service.title} Service
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {service.benefits.map((benefit) => (
-              <div key={benefit.title} className="text-center">
-                <h3 className="text-xl font-semibold mb-4">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-    </>
-  );
+  return <ServiceContent id={id} />;
 } 

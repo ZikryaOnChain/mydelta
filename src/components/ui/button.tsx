@@ -1,20 +1,21 @@
+"use client";
+
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default:
-          "bg-brand text-white hover:bg-brand-dark focus-visible:ring-brand",
-        outline:
-          "border-2 border-brand text-brand hover:bg-brand hover:text-white",
-        ghost:
-          "text-brand hover:bg-brand/10",
-        secondary:
-          "bg-surface-secondary text-surface-dark hover:bg-gray-200",
+        default: "bg-[#1FB8BF] text-white hover:bg-[#1FB8BF]/90 focus-visible:ring-[#1FB8BF]",
+        destructive: "bg-red-500 text-white hover:bg-red-600",
+        outline: "border-2 border-[#1FB8BF] text-[#1FB8BF] hover:bg-[#1FB8BF] hover:text-white",
+        secondary: "bg-white text-[#1FB8BF] hover:bg-gray-100",
+        ghost: "text-[#1FB8BF] hover:bg-[#1FB8BF]/10",
+        link: "text-[#1FB8BF] underline-offset-4 hover:underline",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -40,14 +41,25 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, as = "button", href, ...props }, ref) => {
     if (as === "a") {
+      if (href?.startsWith('http') || href?.startsWith('tel:') || href?.startsWith('mailto:')) {
+        return (
+          <a
+            href={href}
+            className={cn(buttonVariants({ variant, size, className }))}
+            {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+          >
+            {props.children}
+          </a>
+        );
+      }
       return (
-        <a
-          href={href}
+        <Link
+          href={href || '/'}
           className={cn(buttonVariants({ variant, size, className }))}
           {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
           {props.children}
-        </a>
+        </Link>
       );
     }
 
