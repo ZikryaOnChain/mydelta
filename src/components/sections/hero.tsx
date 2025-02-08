@@ -23,7 +23,7 @@ export function Hero() {
             Home is everything
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8">
-            Let's maintain your safe heaven. Professional home maintenance services in Vancouver.
+            Let&apos;s maintain your safe heaven. Professional home maintenance services in Vancouver.
           </p>
           <div className="space-x-4">
             <Button as="a" href="/quote" size="lg">

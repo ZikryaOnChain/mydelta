@@ -34,6 +34,7 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   as?: "button" | "a";
   href?: string;
+  asChild?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

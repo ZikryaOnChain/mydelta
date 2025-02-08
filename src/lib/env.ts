@@ -43,4 +43,16 @@ declare global {
       NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: string;
     }
   }
-} 
+}
+
+export type Env = {
+  GOOGLE_SHEETS_PRIVATE_KEY: string;
+  GOOGLE_SHEETS_CLIENT_EMAIL: string;
+  GOOGLE_SHEETS_SPREADSHEET_ID: string;
+};
+
+export const env: Env = {
+  GOOGLE_SHEETS_PRIVATE_KEY: process.env.GOOGLE_SHEETS_PRIVATE_KEY!,
+  GOOGLE_SHEETS_CLIENT_EMAIL: process.env.GOOGLE_SHEETS_CLIENT_EMAIL!,
+  GOOGLE_SHEETS_SPREADSHEET_ID: process.env.GOOGLE_SHEETS_SPREADSHEET_ID!,
+}; 

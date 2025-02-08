@@ -16,7 +16,7 @@ export default function QuotePage() {
               Get a Free Quote
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Fill out the form below and we'll get back to you with a custom quote for your needs.
+              Fill out the form below and we&apos;ll get back to you with a custom quote for your needs.
             </p>
             <QuoteForm />
           </div>

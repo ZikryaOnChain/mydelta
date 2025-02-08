@@ -21,7 +21,7 @@ type ParticlesProps = {
 };
 
 export const SparklesCore = (props: ParticlesProps) => {
-  // ... rest of the sparkles code you provided ...
+  return null; // Or your actual implementation
 };
 
 export function Sparkles(props: ComponentProps<"div">) {
