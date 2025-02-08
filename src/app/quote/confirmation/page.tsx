@@ -1,21 +1,17 @@
-// import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-
-// Use Next.js built-in types
-type Props = {
-  params: Record<string, never>  // Better than empty object {}
-  searchParams: { [key: string]: string | string[] | undefined }
-}
 
 export const metadata = {
   title: "Quote Request Received - Delta Home Solutions",
   description: "Thank you for requesting a quote from Delta Home Solutions",
 };
 
-export default function QuoteConfirmationPage({
+// Remove custom Props type and use Next.js's built-in types
+export default async function QuoteConfirmationPage({
   searchParams,
-}: Props) {
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
   const name = typeof searchParams.name === 'string' 
     ? searchParams.name 
     : 'there';
