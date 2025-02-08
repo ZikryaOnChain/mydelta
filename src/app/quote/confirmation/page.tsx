@@ -2,10 +2,10 @@
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
-// Update the props type to match Next.js 14 types
-interface PageProps {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+// Use Next.js built-in types
+type Props = {
+  params: {}
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
 export const metadata = {
@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function QuoteConfirmationPage({
   searchParams,
-}: PageProps) {
+}: Props) {
   const name = typeof searchParams.name === 'string' 
     ? searchParams.name 
     : 'there';
