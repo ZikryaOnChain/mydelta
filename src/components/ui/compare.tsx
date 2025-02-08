@@ -79,7 +79,7 @@ export const Compare = ({
   }
 
   const handleStart = useCallback(
-    (clientX: number) => {
+    () => {
       if (slideMode === "drag") {
         setIsDragging(true);
       }
@@ -109,8 +109,11 @@ export const Compare = ({
   );
 
   const handleMouseDown = useCallback(
-    (e: React.MouseEvent) => handleStart(e.clientX),
-    [handleStart]
+    (e: React.MouseEvent) => {
+      handleStart();
+      handleMove(e.clientX);
+    },
+    [handleStart, handleMove]
   );
   const handleMouseUp = useCallback(() => handleEnd(), [handleEnd]);
   const handleMouseMove = useCallback(
@@ -123,10 +126,11 @@ export const Compare = ({
   const handleTouchStart = useCallback(
     (e: React.TouchEvent) => {
       if (!autoplay) {
-        handleStart(e.touches[0].clientX);
+        handleStart();
+        handleMove(e.touches[0].clientX);
       }
     },
-    [handleStart, autoplay]
+    [handleStart, handleMove, autoplay]
   );
 
   const handleTouchEnd = useCallback(() => {
