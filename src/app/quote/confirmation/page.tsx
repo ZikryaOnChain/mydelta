@@ -2,7 +2,9 @@
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
-interface QuoteConfirmationPageProps {
+// Update the props type to match Next.js 14 types
+interface PageProps {
+  params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }
 
@@ -13,7 +15,7 @@ export const metadata = {
 
 export default function QuoteConfirmationPage({
   searchParams,
-}: QuoteConfirmationPageProps) {
+}: PageProps) {
   const name = typeof searchParams.name === 'string' 
     ? searchParams.name 
     : 'there';
