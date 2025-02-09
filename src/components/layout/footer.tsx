@@ -68,22 +68,22 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link 
-                  href="tel:(123) 456-7890" 
+                  href="tel:416-931-3314" 
                   className="text-gray-400 hover:text-[#1FB8BF] transition-colors no-underline"
                 >
-                  (123) 456-7890
+                  416-931-3314
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="mailto:info@deltahomesolutions.com"
+                  href="mailto:info@mydelta.ca"
                   className="text-gray-400 hover:text-[#1FB8BF] transition-colors no-underline"
                 >
-                  info@deltahomesolutions.com
+                  info@mydelta.ca
                 </Link>
               </li>
               <li className="text-gray-400">
-                Lower Mainland, BC, Canada
+                12414 82 Ave Unit 110, Surrey, BC V3W 3E9
               </li>
             </ul>
           </div>
