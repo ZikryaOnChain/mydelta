@@ -14,7 +14,7 @@ export function Manufacturers() {
     <section className="py-12 md:py-20 bg-gray-50">
       <Container>
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 px-4">
             Our methods are approved by all manufacturing associations
           </h2>
         </div>

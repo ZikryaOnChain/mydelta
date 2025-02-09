@@ -44,14 +44,14 @@ export function ServiceContent({ id }: ServiceContentProps) {
       {/* Benefits Section */}
       <section className="py-16">
         <Container>
-          <h2 className="text-3xl font-bold mb-12 text-center">
+          <h2 className="text-3xl font-bold mb-12 text-center text-black">
             Why Choose Our {service.title} Service
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {service.benefits.map((benefit) => (
               <div key={benefit.title} className="text-center">
-                <h3 className="text-xl font-semibold mb-4">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <h3 className="text-xl font-semibold mb-4 text-black">{benefit.title}</h3>
+                <p className="text-gray-800">{benefit.description}</p>
               </div>
             ))}
           </div>

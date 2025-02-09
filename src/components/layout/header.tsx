@@ -29,8 +29,8 @@ export function Header() {
           </div>
 
           {/* Phone - Always visible */}
-          <Link
-            href="tel:(123) 456-7890"
+          <a
+            href="tel:+1-123-456-7890"
             className="flex items-center px-4 py-2 md:px-5 md:py-3 rounded-full border-2 border-[#1FB8BF] bg-black text-white hover:bg-[#1FB8BF] transition-colors no-underline whitespace-nowrap text-sm md:text-base uppercase"
           >
             <svg
@@ -48,7 +48,7 @@ export function Header() {
             </svg>
             <span className="hidden md:inline">(123) 456-7890</span>
             <span className="md:hidden">CALL</span>
-          </Link>
+          </a>
         </div>
       </div>
     </header>

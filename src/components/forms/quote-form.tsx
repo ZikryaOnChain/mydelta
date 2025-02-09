@@ -59,13 +59,13 @@ export function QuoteForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Service Selection */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-black mb-2">
           Service Required *
         </label>
         <select
           value={formData.service}
           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 text-black"
           required
         >
           <option value="">Select a service</option>
@@ -84,6 +84,7 @@ export function QuoteForm() {
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           required
+          className="text-black"
         />
         <Input
           label="Email *"
@@ -91,6 +92,7 @@ export function QuoteForm() {
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           required
+          className="text-black"
         />
       </div>
 
@@ -101,12 +103,14 @@ export function QuoteForm() {
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
           required
+          className="text-black"
         />
         <Input
           label="Preferred Date"
           type="date"
           value={formData.preferredDate}
           onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
+          className="text-black"
         />
       </div>
 
@@ -116,18 +120,19 @@ export function QuoteForm() {
         value={formData.address}
         onChange={(e) => setFormData({ ...formData, address: e.target.value })}
         required
+        className="text-black"
       />
 
       {/* Additional Information */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-black mb-2">
           Additional Details
         </label>
         <textarea
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           rows={4}
-          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 text-black"
           placeholder="Any specific requirements or concerns..."
         />
       </div>

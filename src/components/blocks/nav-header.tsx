@@ -22,10 +22,10 @@ function NavHeader() {
   const [position, setPosition] = useState({ left: 0, width: 0, opacity: 0 });
 
   return (
-    <nav className="flex flex-1 ml-4 md:ml-8">
+    <nav className="hidden md:flex flex-1 ml-8">
       {/* Desktop Navigation with hover effect */}
       <ul
-        className="hidden md:flex relative w-fit rounded-full border-2 border-[#1FB8BF] bg-black p-1"
+        className="relative w-fit rounded-full border-2 border-[#1FB8BF] bg-black p-1"
         onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}
       >
         {navLinks.map((link) => (
@@ -34,20 +34,6 @@ function NavHeader() {
           </Tab>
         ))}
         <Cursor position={position} />
-      </ul>
-
-      {/* Mobile Navigation - Simple Links */}
-      <ul className="md:hidden flex gap-4">
-        {navLinks.map((link) => (
-          <li key={link.name}>
-            <Link
-              href={link.href}
-              className="text-white hover:text-[#1FB8BF] transition-colors text-sm uppercase"
-            >
-              {link.name}
-            </Link>
-          </li>
-        ))}
       </ul>
     </nav>
   );
