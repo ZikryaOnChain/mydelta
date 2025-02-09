@@ -37,11 +37,11 @@ const cities = {
 
 export function CoverageArea() {
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section className="py-16 md:py-24 bg-black text-white">
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Service Area Coverage</h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-300">
             Serving the entire Lower Mainland with professional home maintenance services.
           </p>
         </div>
@@ -51,7 +51,7 @@ export function CoverageArea() {
             <div key={region} className="space-y-2">
               <ul className="space-y-2">
                 {cityList.map((city) => (
-                  <li key={city} className="text-gray-600 flex items-center">
+                  <li key={city} className="text-gray-300 flex items-center">
                     <svg
                       className="w-5 h-5 text-[#1FB8BF] mr-2 flex-shrink-0"
                       fill="none"
