@@ -33,7 +33,7 @@ export function AnimatedHero() {
           src="/images/hero/hero-bg.jpg"
           alt="Hero background"
           fill
-          className="object-cover md:object-center object-[center_20%]"
+          className="object-cover md:object-center object-[center_40%] scale-[1.5] md:scale-100"
           priority
         />
         <div className="absolute inset-0 bg-black/50" />

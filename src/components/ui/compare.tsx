@@ -40,7 +40,7 @@ export const Compare = ({
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isDragging && e.buttons !== 1) return;
+      if (!isDragging) return;
       updateSliderPosition(e.clientX);
     },
     [isDragging, updateSliderPosition]
@@ -56,17 +56,14 @@ export const Compare = ({
     [isDragging, updateSliderPosition]
   );
 
-  const handleMouseDown = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+  const handleDragStart = useCallback((e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDragging(true);
-    updateSliderPosition(e.clientX);
-  }, [updateSliderPosition]);
-
-  const handleTouchStart = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    setIsDragging(true);
-    const touch = e.touches[0];
-    updateSliderPosition(touch.clientX);
+    if ('touches' in e) {
+      updateSliderPosition(e.touches[0].clientX);
+    } else {
+      updateSliderPosition(e.clientX);
+    }
   }, [updateSliderPosition]);
 
   const handleDragEnd = useCallback(() => {
@@ -77,36 +74,31 @@ export const Compare = ({
     <div
       ref={sliderRef}
       className={cn(
-        "relative w-full h-full select-none rounded-2xl touch-none",
+        "relative w-full h-full select-none rounded-2xl touch-none cursor-grab active:cursor-grabbing",
         className
       )}
-      style={{ cursor: isDragging ? "grabbing" : "grab" }}
       onMouseMove={handleMouseMove}
-      onMouseDown={handleMouseDown}
+      onMouseDown={handleDragStart}
       onMouseUp={handleDragEnd}
       onMouseLeave={handleDragEnd}
-      onTouchStart={handleTouchStart}
+      onTouchStart={handleDragStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleDragEnd}
       onTouchCancel={handleDragEnd}
     >
-      <AnimatePresence initial={false}>
-        <motion.div
-          className="absolute top-0 bottom-0 w-[2px] bg-white z-30"
-          style={{ left: `${sliderXPercent}%` }}
-          transition={{ duration: 0 }}
-        >
-          {showHandlebar && (
-            <div 
-              className="h-8 w-8 rounded-full top-1/2 -translate-y-1/2 bg-white z-30 -translate-x-1/2 absolute flex items-center justify-center shadow-lg cursor-grab active:cursor-grabbing"
-              onMouseDown={(e) => e.stopPropagation()}
-              onTouchStart={(e) => e.stopPropagation()}
-            >
-              <IconDotsVertical className="h-5 w-5 text-gray-600" />
-            </div>
-          )}
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        className="absolute top-0 bottom-0 w-[2px] bg-white z-30"
+        style={{ left: `${sliderXPercent}%` }}
+        transition={{ duration: 0.1 }}
+      >
+        {showHandlebar && (
+          <div 
+            className="h-8 w-8 rounded-full top-1/2 -translate-y-1/2 bg-white z-30 -translate-x-1/2 absolute flex items-center justify-center shadow-lg cursor-grab active:cursor-grabbing"
+          >
+            <IconDotsVertical className="h-5 w-5 text-gray-600" />
+          </div>
+        )}
+      </motion.div>
 
       <div className="overflow-hidden w-full h-full relative z-20 pointer-events-none">
         <AnimatePresence initial={false}>
