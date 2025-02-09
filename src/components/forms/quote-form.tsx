@@ -1,15 +1,31 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { services } from "@/data/services";
 
+interface GoogleWindow {
+  google: {
+    maps: {
+      places: {
+        Autocomplete: new (
+          input: HTMLInputElement,
+          opts?: google.maps.places.AutocompleteOptions
+        ) => google.maps.places.Autocomplete;
+      };
+    };
+  };
+}
+
 export function QuoteForm() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
+  const addressInputRef = useRef<HTMLInputElement>(null);
+  const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null);
+  
   const [formData, setFormData] = useState({
     service: "",
     name: "",
@@ -20,13 +36,34 @@ export function QuoteForm() {
     preferredDate: "",
   });
 
-  // Handle initial service parameter after component mounts
+  // Handle initial service parameter and initialize autocomplete after mount
   useEffect(() => {
     const initialService = searchParams.get("service");
     if (initialService) {
       setFormData(prev => ({ ...prev, service: initialService }));
     }
     setMounted(true);
+
+    // Initialize autocomplete after component mounts
+    if (addressInputRef.current && !autocompleteRef.current && typeof window !== 'undefined') {
+      const googleWindow = window as unknown as GoogleWindow;
+      if (googleWindow.google?.maps?.places) {
+        autocompleteRef.current = new googleWindow.google.maps.places.Autocomplete(
+          addressInputRef.current,
+          {
+            componentRestrictions: { country: "ca" },
+            fields: ["formatted_address"],
+            types: ["address"],
+          }
+        );
+
+        autocompleteRef.current.addListener("place_changed", () => {
+          const place = autocompleteRef.current?.getPlace();
+          const address = place?.formatted_address || "";
+          setFormData(prev => ({ ...prev, address }));
+        });
+      }
+    }
   }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -50,7 +87,6 @@ export function QuoteForm() {
     }
   };
 
-  // Don't render until after client-side hydration
   if (!mounted) {
     return null;
   }
@@ -64,7 +100,7 @@ export function QuoteForm() {
         </label>
         <select
           value={formData.service}
-          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+          onChange={(e) => setFormData(prev => ({ ...prev, service: e.target.value }))}
           className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 text-black"
           required
         >
@@ -82,7 +118,7 @@ export function QuoteForm() {
         <Input
           label="Full Name *"
           value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
           required
           className="text-black"
         />
@@ -90,7 +126,7 @@ export function QuoteForm() {
           label="Email *"
           type="email"
           value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
           required
           className="text-black"
         />
@@ -101,7 +137,7 @@ export function QuoteForm() {
           label="Phone Number *"
           type="tel"
           value={formData.phone}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+          onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
           required
           className="text-black"
         />
@@ -109,7 +145,7 @@ export function QuoteForm() {
           label="Preferred Date"
           type="date"
           value={formData.preferredDate}
-          onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
+          onChange={(e) => setFormData(prev => ({ ...prev, preferredDate: e.target.value }))}
           className="text-black"
         />
       </div>
@@ -118,9 +154,10 @@ export function QuoteForm() {
       <Input
         label="Property Address *"
         value={formData.address}
-        onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+        onChange={(e) => setFormData(prev => ({ ...prev, address: e.target.value }))}
         required
         className="text-black"
+        ref={addressInputRef}
       />
 
       {/* Additional Information */}
@@ -130,7 +167,7 @@ export function QuoteForm() {
         </label>
         <textarea
           value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
           rows={4}
           className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 text-black"
           placeholder="Any specific requirements or concerns..."
