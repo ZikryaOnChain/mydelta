@@ -4,11 +4,6 @@ import { Container } from "@/components/ui/container";
 import { QuoteForm } from "@/components/forms/quote-form";
 import { useEffect } from "react";
 
-export const metadata = {
-  title: "Get a Quote - Delta Home Solutions",
-  description: "Request a free quote for our professional home maintenance services",
-};
-
 export default function QuotePage() {
   useEffect(() => {
     // Scroll to top when the page loads
