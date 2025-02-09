@@ -1,5 +1,8 @@
+"use client";
+
 import { Container } from "@/components/ui/container";
 import { QuoteForm } from "@/components/forms/quote-form";
+import { useEffect } from "react";
 
 export const metadata = {
   title: "Get a Quote - Delta Home Solutions",
@@ -7,6 +10,11 @@ export const metadata = {
 };
 
 export default function QuotePage() {
+  useEffect(() => {
+    // Scroll to top when the page loads
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <section className="bg-gray-50 py-16 md:py-24">
