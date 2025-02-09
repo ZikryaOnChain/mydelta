@@ -56,6 +56,20 @@ export const metadata: Metadata = {
   verification: {
     google: "google-site-verification-code", // You'll need to replace this with your actual verification code
   },
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico" },
+      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: [
+      { url: "/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { url: "/favicon/web-app-manifest-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon/web-app-manifest-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+  },
+  manifest: "/favicon/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -65,6 +79,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+      </head>
       <body className={inter.className}>
         <Header />
         <main className="min-h-screen pt-20">{children}</main>
