@@ -37,9 +37,8 @@ export default function QuoteConfirmationPage() {
             <h1 className="text-3xl md:text-4xl font-bold mb-4 text-black">
               Thank You {firstName}!
             </h1>
-            <p className="text-xl text-gray-600 mb-12">
-              We&apos;ve received your quote request and will get back to you within 24
-              hours with a detailed quote.
+            <p className="text-xl text-gray-600 mb-8">
+              We&apos;ve received your quote request and will get back to you within 24 hours with a detailed quote.
             </p>
           </div>
 
