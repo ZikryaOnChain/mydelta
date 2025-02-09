@@ -86,7 +86,7 @@ export function AnimatedHero() {
                   variant: "outline",
                   size: "lg",
                 }),
-                "px-8 py-6 text-lg min-w-[200px] bg-black hover:bg-[#1FB8BF]"
+                "px-8 py-6 text-lg min-w-[200px] bg-black hover:bg-[#1FB8BF] text-white"
               )}
             >
               Our Services

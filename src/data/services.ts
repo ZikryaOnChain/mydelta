@@ -18,12 +18,12 @@ export const services: Service[] = [
   {
     id: "roof-maintenance",
     title: "Roof Soft Wash",
-    description: "Professional roof cleaning and maintenance service to protect your investment and enhance curb appeal.",
+    description: "Prevent harmful moss build up before it leads to costly damages. Our gentle de-mossing and decontamination process is tried and true.",
     image: "/images/services/roof-softwash.jpg",
     features: ["Safe and effective cleaning", "Extends roof life", "Removes harmful growth"],
     benefits: [
       {
-        title: "Extend Roof Life",
+        title: "Prevent Damage",
         description: "Our soft wash method safely removes harmful substances that can damage your roof over time."
       },
       {
@@ -43,7 +43,7 @@ export const services: Service[] = [
   {
     id: "gutter-cleaning",
     title: "Gutter Cleaning",
-    description: "Comprehensive gutter cleaning service to ensure proper water drainage and protect your home.",
+    description: "Cleaning your gutters isn't just a hassle it's dangerous too, leave it to the pros. Protect your home from water damage.",
     image: "/images/services/gutter-cleaning.jpg",
     features: ["Complete debris removal", "Downspout cleaning", "Gutter inspection"],
     benefits: [
@@ -68,7 +68,7 @@ export const services: Service[] = [
   {
     id: "house-washing",
     title: "House Washing",
-    description: "Professional house washing service to restore and maintain your home's exterior beauty.",
+    description: "Refresh your home top to bottom. Our expert team will have your home looking like new in no time.",
     image: "/images/services/siding-cleaning.jpg",
     features: ["Soft wash technique", "Safe for all surfaces", "Complete exterior cleaning"],
     benefits: [
@@ -93,9 +93,9 @@ export const services: Service[] = [
   {
     id: "pressure-washing",
     title: "Pressure Washing",
-    description: "Professional pressure washing service for driveways, patios, and walkways.",
+    description: "Revitalize your outdoor spaces this spring with a professional pressure wash.",
     image: "/images/services/pressure-washing.jpg",
-    features: ["Deep cleaning", "Stain removal", "Surface restoration"],
+    features: ["Say goodbye to winter grime", "Prevent Slipping", "Stain removal"],
     benefits: [
       {
         title: "Restore Surfaces",
@@ -120,7 +120,7 @@ export const services: Service[] = [
     title: "Window Cleaning",
     description: "Professional window cleaning service for crystal clear views and enhanced home appearance.",
     image: "/images/services/window-cleaning.jpg",
-    features: ["Interior & exterior cleaning", "Screen cleaning", "Track cleaning"],
+    features: ["Streak free shine", "Screen cleaning", "Track cleaning"],
     benefits: [
       {
         title: "Crystal Clear Views",
