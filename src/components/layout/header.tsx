@@ -13,12 +13,12 @@ export function Header() {
           <div className="flex items-center flex-1">
             {/* Logo */}
             <Link href="/" className="flex items-center no-underline">
-              <div className="relative w-[40px] h-[40px] md:w-[52px] md:h-[52px] rounded-full overflow-hidden bg-black flex items-center justify-center">
+              <div className="relative h-10 w-10 md:h-12 md:w-12 rounded-full overflow-hidden bg-black flex items-center justify-center">
                 <Image
                   src="/images/brand/logo.png"
                   alt="Delta Logo"
                   fill
-                  className="object-cover p-1"
+                  className="object-cover p-0.5"
                   priority
                 />
               </div>
@@ -31,7 +31,7 @@ export function Header() {
           {/* Phone - Always visible */}
           <a
             href="tel:+1-123-456-7890"
-            className="flex items-center px-4 py-2 md:px-5 md:py-3 rounded-full border-2 border-[#1FB8BF] bg-black text-white hover:bg-[#1FB8BF] transition-colors no-underline whitespace-nowrap text-sm md:text-base uppercase"
+            className="flex items-center h-10 md:h-12 px-4 py-2 md:px-5 md:py-3 rounded-full border-2 border-[#1FB8BF] bg-black text-white hover:bg-[#1FB8BF] transition-colors no-underline whitespace-nowrap text-sm md:text-base uppercase"
           >
             <svg
               className="w-4 h-4 mr-2 md:hidden"
