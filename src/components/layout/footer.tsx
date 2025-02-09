@@ -3,6 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
+const services = [
+  { name: "Roof Maintenance", id: "roof-maintenance" },
+  { name: "Gutter Cleaning", id: "gutter-cleaning" },
+  { name: "Window Cleaning", id: "window-cleaning" },
+  { name: "Pressure Washing", id: "pressure-washing" },
+];
+
 export function Footer() {
   return (
     <footer className="bg-black text-white py-16">
@@ -55,10 +62,16 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
-              <li className="text-gray-400">Roof Maintenance</li>
-              <li className="text-gray-400">Gutter Cleaning</li>
-              <li className="text-gray-400">Window Cleaning</li>
-              <li className="text-gray-400">Pressure Washing</li>
+              {services.map((service) => (
+                <li key={service.id}>
+                  <Link 
+                    href={`/services/${service.id}`}
+                    className="text-gray-400 hover:text-[#1FB8BF] transition-colors no-underline"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -67,23 +80,30 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2">
               <li>
-                <Link 
+                <a 
                   href="tel:416-931-3314" 
                   className="text-gray-400 hover:text-[#1FB8BF] transition-colors no-underline"
                 >
                   416-931-3314
-                </Link>
+                </a>
               </li>
               <li>
-                <Link 
-                  href="mailto:info@mydelta.ca"
+                <a 
+                  href="mailto:info@mydelta.ca?subject=Inquiry from Website"
                   className="text-gray-400 hover:text-[#1FB8BF] transition-colors no-underline"
                 >
                   info@mydelta.ca
-                </Link>
+                </a>
               </li>
-              <li className="text-gray-400">
-                12414 82 Ave Unit 110, Surrey, BC V3W 3E9
+              <li>
+                <a 
+                  href="https://maps.google.com/?q=12414+82+Ave+Unit+110,+Surrey,+BC+V3W+3E9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#1FB8BF] transition-colors no-underline"
+                >
+                  12414 82 Ave Unit 110, Surrey, BC V3W 3E9
+                </a>
               </li>
             </ul>
           </div>

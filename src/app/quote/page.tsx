@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/container";
 import { QuoteForm } from "@/components/forms/quote-form";
+import { BackButton } from "@/components/ui/back-button";
 import { useEffect } from "react";
 
 export default function QuotePage() {
@@ -12,6 +13,7 @@ export default function QuotePage() {
 
   return (
     <>
+      <BackButton />
       <section className="bg-gray-50 py-16 md:py-24">
         <Container>
           <div className="max-w-3xl mx-auto">

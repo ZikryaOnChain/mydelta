@@ -22,10 +22,10 @@ function NavHeader() {
   const [position, setPosition] = useState({ left: 0, width: 0, opacity: 0 });
 
   return (
-    <nav className="hidden md:flex flex-1 ml-8">
+    <nav className="hidden md:flex flex-1 ml-12">
       {/* Desktop Navigation with hover effect */}
       <ul
-        className="relative w-fit rounded-full border-2 border-[#1FB8BF] bg-black p-1"
+        className="relative flex items-center gap-2 rounded-full border-2 border-[#1FB8BF] bg-black px-2 py-1"
         onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}
       >
         {navLinks.map((link) => (
@@ -65,7 +65,7 @@ const Tab = ({
     >
       <Link 
         href={href}
-        className="block cursor-pointer px-3 py-1.5 text-xs uppercase text-white hover:text-white md:px-5 md:py-3 md:text-base no-underline"
+        className="block px-6 py-2 text-sm uppercase text-white hover:text-white no-underline"
       >
         {children}
       </Link>
@@ -77,7 +77,7 @@ const Cursor = ({ position }: { position: Position }) => {
   return (
     <motion.li
       animate={position}
-      className="absolute z-0 h-7 rounded-full bg-[#1FB8BF] md:h-12"
+      className="absolute z-0 h-9 rounded-full bg-[#1FB8BF]"
     />
   );
 };

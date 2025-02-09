@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { BackButton } from "@/components/ui/back-button";
 import { services } from "@/data/services";
 import Image from "next/image";
 
@@ -11,6 +12,7 @@ export const metadata = {
 export default function ServicesPage() {
   return (
     <>
+      <BackButton />
       {/* Hero Section */}
       <section className="bg-gray-50 py-16 md:py-24">
         <Container>
