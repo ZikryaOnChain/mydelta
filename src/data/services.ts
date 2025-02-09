@@ -19,7 +19,7 @@ export const services: Service[] = [
     id: "roof-maintenance",
     title: "Roof Soft Wash",
     description: "Professional roof cleaning and maintenance service to protect your investment and enhance curb appeal.",
-    image: "/images/services/roof-maintenance.jpg",
+    image: "/images/services/roof-softwash.jpg",
     features: ["Safe and effective cleaning", "Extends roof life", "Removes harmful growth"],
     benefits: [
       {
