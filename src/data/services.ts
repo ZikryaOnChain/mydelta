@@ -16,153 +16,153 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: "roof-softwash",
-    title: "Roof Softwash",
-    description: "Safe and effective low-pressure cleaning system that removes algae, moss, and black streaks from your roof.",
-    features: [
-      "Eco-friendly cleaning solutions",
-      "No pressure damage to shingles",
-      "Extends roof lifespan",
-      "Improves curb appeal",
-    ],
-    image: "/images/services/roof-softwash.jpg",
+    id: "roof-maintenance",
+    title: "Roof Soft Wash",
+    description: "Professional roof cleaning and maintenance service to protect your investment and enhance curb appeal.",
+    image: "/images/services/roof-maintenance.jpg",
+    features: ["Safe and effective cleaning", "Extends roof life", "Removes harmful growth"],
     benefits: [
       {
-        title: "Protect Your Investment",
-        description: "Prevent costly roof damage and extend its life",
+        title: "Extend Roof Life",
+        description: "Our soft wash method safely removes harmful substances that can damage your roof over time."
       },
       {
-        title: "Improve Energy Efficiency",
-        description: "Remove heat-absorbing dark spots and algae",
+        title: "Improve Appearance",
+        description: "Restore your roof's original look and enhance your home's curb appeal."
       },
       {
-        title: "Safe Application",
-        description: "No risk of damage to shingles or roof structure",
-      },
+        title: "Prevent Damage",
+        description: "Regular maintenance prevents expensive repairs and extends the life of your roof."
+      }
     ],
     pricing: {
-      from: 299,
-      unit: "per service",
-    },
+      from: 749,
+      unit: "per service"
+    }
   },
   {
     id: "gutter-cleaning",
     title: "Gutter Cleaning",
-    description: "Professional gutter cleaning to prevent water damage and maintain your home's integrity.",
-    features: [
-      "Complete debris removal",
-      "Downspout cleaning",
-      "Gutter flow testing",
-      "Minor repairs if needed",
-    ],
+    description: "Comprehensive gutter cleaning service to ensure proper water drainage and protect your home.",
     image: "/images/services/gutter-cleaning.jpg",
+    features: ["Complete debris removal", "Downspout cleaning", "Gutter inspection"],
     benefits: [
       {
         title: "Prevent Water Damage",
-        description: "Protect your home's foundation and walls from water overflow",
+        description: "Clean gutters protect your home from water damage and foundation issues."
       },
       {
-        title: "Extend Gutter Life",
-        description: "Regular maintenance extends the lifespan of your gutters",
+        title: "Maintain Functionality",
+        description: "Regular cleaning ensures your gutters work effectively year-round."
       },
       {
-        title: "Pest Prevention",
-        description: "Eliminate breeding grounds for pests and mosquitos",
-      },
+        title: "Protect Investment",
+        description: "Well-maintained gutters help prevent costly repairs to your home."
+      }
     ],
     pricing: {
       from: 199,
-      unit: "per service",
-    },
+      unit: "per service"
+    }
+  },
+  {
+    id: "house-washing",
+    title: "House Washing",
+    description: "Professional house washing service to restore and maintain your home's exterior beauty.",
+    image: "/images/services/siding-cleaning.jpg",
+    features: ["Soft wash technique", "Safe for all surfaces", "Complete exterior cleaning"],
+    benefits: [
+      {
+        title: "Extend House Life",
+        description: "Regular cleaning helps protect your home's exterior surfaces from damage."
+      },
+      {
+        title: "Enhanced Curb Appeal",
+        description: "Restore your home's appearance and maintain its value."
+      },
+      {
+        title: "Complete House Make Over",
+        description: "Soffits, Sidings fascia boards and everything else"
+      }
+    ],
+    pricing: {
+      from: 499,
+      unit: "per service"
+    }
   },
   {
     id: "pressure-washing",
     title: "Pressure Washing",
-    description: "High-quality pressure washing services for driveways, patios, and walkways.",
-    features: [
-      "Surface appropriate pressure",
-      "Stain removal",
-      "Concrete cleaning",
-      "Deck & fence cleaning",
-    ],
+    description: "Professional pressure washing service for driveways, patios, and walkways.",
     image: "/images/services/pressure-washing.jpg",
+    features: ["Deep cleaning", "Stain removal", "Surface restoration"],
     benefits: [
       {
         title: "Restore Surfaces",
-        description: "Remove years of dirt, grime, and stains",
+        description: "Remove years of built-up dirt, grime, and stains."
       },
       {
         title: "Prevent Damage",
-        description: "Stop mold and mildew from deteriorating surfaces",
+        description: "Regular cleaning prevents deterioration and extends surface life."
       },
       {
-        title: "Increase Property Value",
-        description: "Improve curb appeal with clean surfaces",
-      },
+        title: "Improve Safety",
+        description: "Remove slippery substances and reduce fall hazards."
+      }
     ],
     pricing: {
       from: 249,
-      unit: "per service",
-    },
+      unit: "per service"
+    }
+  },
+  {
+    id: "window-cleaning",
+    title: "Window Cleaning",
+    description: "Professional window cleaning service for crystal clear views and enhanced home appearance.",
+    image: "/images/services/window-cleaning.jpg",
+    features: ["Interior & exterior cleaning", "Screen cleaning", "Track cleaning"],
+    benefits: [
+      {
+        title: "Crystal Clear Views",
+        description: "Enjoy spotless windows and improved natural light."
+      },
+      {
+        title: "Professional Results",
+        description: "Expert cleaning techniques for streak-free windows."
+      },
+      {
+        title: "Complete Service",
+        description: "Includes frames, tracks, and screens for a thorough clean."
+      }
+    ],
+    pricing: {
+      from: 199,
+      unit: "per service"
+    }
   },
   {
     id: "solar-panel-cleaning",
     title: "Solar Panel Cleaning",
-    description: "Maximize your solar investment with professional panel cleaning services.",
-    features: [
-      "Increase energy efficiency",
-      "Specialized cleaning solutions",
-      "Performance testing",
-      "Regular maintenance plans",
-    ],
+    description: "Specialized cleaning service to maintain your solar panels' efficiency and performance.",
     image: "/images/services/solar-panel-cleaning.jpg",
+    features: ["Performance optimization", "Safe cleaning methods", "Regular maintenance"],
     benefits: [
       {
-        title: "Maximize Output",
-        description: "Improve energy production by up to 30%",
+        title: "Maximize Efficiency",
+        description: "Clean panels produce more energy and better performance."
       },
       {
-        title: "Protect Warranty",
-        description: "Maintain manufacturer warranty requirements",
+        title: "Protect Investment",
+        description: "Regular maintenance extends the life of your solar system."
       },
       {
-        title: "Expert Care",
-        description: "Safe cleaning by trained professionals",
-      },
+        title: "Professional Care",
+        description: "Safe and effective cleaning methods for delicate panels."
+      }
     ],
     pricing: {
-      from: 179,
-      unit: "per service",
-    },
-  },
-  {
-    id: "siding-cleaning",
-    title: "Siding Cleaning",
-    description: "Restore your home's exterior with our professional siding cleaning service.",
-    features: [
-      "Soft wash technique",
-      "Mold & mildew removal",
-      "All siding types",
-      "Protective treatment",
-    ],
-    image: "/images/services/siding-cleaning.jpg",
-    benefits: [
-      {
-        title: "Extend Siding Life",
-        description: "Prevent permanent staining and damage",
-      },
-      {
-        title: "Beautiful Results",
-        description: "Restore your home's original appearance",
-      },
-      {
-        title: "Complete Protection",
-        description: "Treatment that prevents quick resoiling",
-      },
-    ],
-    pricing: {
-      from: 269,
-      unit: "per service",
-    },
-  },
+      from: 199,
+      unit: "per service"
+    }
+  }
 ]; 

@@ -4,10 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 const services = [
-  { name: "Roof Maintenance", id: "roof-maintenance" },
+  { name: "Roof Soft Wash", id: "roof-maintenance" },
   { name: "Gutter Cleaning", id: "gutter-cleaning" },
-  { name: "Window Cleaning", id: "window-cleaning" },
+  { name: "House Washing", id: "house-washing" },
   { name: "Pressure Washing", id: "pressure-washing" },
+  { name: "Window Cleaning", id: "window-cleaning" },
+  { name: "Solar Panel Cleaning", id: "solar-panel-cleaning" },
 ];
 
 export function Footer() {

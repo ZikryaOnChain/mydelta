@@ -1,14 +1,25 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export function BackButton() {
   const router = useRouter();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <button
       onClick={() => router.back()}
-      className="md:hidden fixed top-24 left-4 z-50 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center"
+      className={`md:hidden fixed ${isScrolled ? 'top-24 left-4' : 'top-4 right-4'} z-50 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300`}
       aria-label="Go back"
     >
       <svg
