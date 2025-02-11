@@ -42,20 +42,8 @@ export const Compare = ({
     (e: React.TouchEvent<HTMLDivElement>) => {
       if (!isDragging) return;
       
-      // Get initial touch point
       const touch = e.touches[0];
-      const touchStartX = touch.clientX;
-      const touchStartY = touch.clientY;
-      
-      // Calculate movement direction
-      const deltaX = Math.abs(touchStartX - touch.clientX);
-      const deltaY = Math.abs(touchStartY - touch.clientY);
-      
-      // Only prevent default and update slider if movement is more horizontal than vertical
-      if (deltaX > deltaY) {
-        e.preventDefault();
-        updateSliderPosition(touch.clientX);
-      }
+      updateSliderPosition(touch.clientX);
     },
     [isDragging, updateSliderPosition]
   );
@@ -76,7 +64,7 @@ export const Compare = ({
   }, [updateSliderPosition]);
 
   const handleTouchStart = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
-    e.preventDefault();
+    // Don't prevent default to allow scrolling
     setIsDragging(true);
     const touch = e.touches[0];
     updateSliderPosition(touch.clientX);

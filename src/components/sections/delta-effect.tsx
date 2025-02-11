@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/container";
 import { Compare } from "@/components/ui/compare";
+import { useCallback } from "react";
 
 const features = [
   {
@@ -27,6 +28,37 @@ const features = [
 ];
 
 export function DeltaEffect() {
+  const handleTouchMove = useCallback(
+    (e: React.TouchEvent<HTMLDivElement>) => {
+      if (!isDragging) return;
+      
+      // Get initial touch point
+      const touch = e.touches[0];
+      const touchStartX = touch.clientX;
+      const touchStartY = touch.clientY;
+      
+      // Calculate movement direction
+      const deltaX = Math.abs(touchStartX - touch.clientX);
+      const deltaY = Math.abs(touchStartY - touch.clientY);
+      
+      // Only prevent default and update slider if movement is more horizontal than vertical
+      if (deltaX > deltaY) {
+        e.preventDefault();
+        updateSliderPosition(touch.clientX);
+      }
+    },
+    [isDragging, updateSliderPosition]
+  );
+
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isDragging && e.buttons !== 1) return;
+      // Only handle horizontal movement
+      updateSliderPosition(e.clientX);
+    },
+    [isDragging, updateSliderPosition]
+  );
+
   return (
     <section className="py-16 md:py-24">
       <Container>
