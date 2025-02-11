@@ -38,21 +38,20 @@ export const Compare = ({
     setSliderXPercent(Math.max(0, Math.min(100, percent)));
   }, []);
 
-  const handleTouchMove = useCallback(
-    (e: React.TouchEvent<HTMLDivElement>) => {
-      if (!isDragging) return;
-      
-      const touch = e.touches[0];
-      updateSliderPosition(touch.clientX);
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isDragging && e.buttons !== 1) return;
+      updateSliderPosition(e.clientX);
     },
     [isDragging, updateSliderPosition]
   );
 
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isDragging && e.buttons !== 1) return;
-      // Only handle horizontal movement
-      updateSliderPosition(e.clientX);
+  const handleTouchMove = useCallback(
+    (e: React.TouchEvent<HTMLDivElement>) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const touch = e.touches[0];
+      updateSliderPosition(touch.clientX);
     },
     [isDragging, updateSliderPosition]
   );
@@ -64,7 +63,7 @@ export const Compare = ({
   }, [updateSliderPosition]);
 
   const handleTouchStart = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
-    // Don't prevent default to allow scrolling
+    e.preventDefault();
     setIsDragging(true);
     const touch = e.touches[0];
     updateSliderPosition(touch.clientX);
