@@ -30,7 +30,7 @@ export function Footer() {
                 />
               </div>
               <span className="text-xl font-bold text-white">
-                Delta Home Solutions
+                Delta Exterior Cleaning and Pest Control
               </span>
             </Link>
             <p className="text-gray-400">
@@ -113,7 +113,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} Delta Home Solutions. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Delta Exterior Cleaning and Pest Control. All rights reserved.</p>
         </div>
       </div>
     </footer>

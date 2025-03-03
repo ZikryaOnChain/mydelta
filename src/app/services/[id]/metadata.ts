@@ -6,7 +6,7 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
   if (!service) return {};
 
   return {
-    title: `${service.title} - Delta Home Solutions`,
+    title: `${service.title} - Delta Exterior Cleaning and Pest Control`,
     description: service.description,
   };
 } 

@@ -10,8 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://mydelta.vercel.app"),
   title: {
-    default: "Delta Home Solutions - Professional Home Maintenance Services",
-    template: "%s | Delta Home Solutions",
+    default: "Delta Exterior Cleaning and Pest Control - Professional Home Maintenance Services",
+    template: "%s | Delta Exterior Cleaning and Pest Control",
   },
   description: "Professional exterior cleaning services in Lower Mainland. Specializing in house washing, roof soft wash, gutter cleaning, pressure washing, and window cleaning.",
   keywords: [
@@ -27,19 +27,19 @@ export const metadata: Metadata = {
     "Surrey",
     "Professional Cleaning",
   ],
-  authors: [{ name: "Delta Home Solutions" }],
-  creator: "Delta Home Solutions",
-  publisher: "Delta Home Solutions",
+  authors: [{ name: "Delta Exterior Cleaning and Pest Control" }],
+  creator: "Delta Exterior Cleaning and Pest Control",
+  publisher: "Delta Exterior Cleaning and Pest Control",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "Delta Home Solutions - Professional Home Maintenance Services",
+    title: "Delta Exterior Cleaning and Pest Control - Professional Home Maintenance Services",
     description: "Professional exterior cleaning services in Lower Mainland. Specializing in house washing, roof soft wash, gutter cleaning, pressure washing, and window cleaning.",
     url: "https://mydelta.vercel.app",
-    siteName: "Delta Home Solutions",
+    siteName: "Delta Exterior Cleaning and Pest Control",
     locale: "en_CA",
     type: "website",
   },
