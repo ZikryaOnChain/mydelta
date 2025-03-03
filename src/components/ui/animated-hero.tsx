@@ -1,5 +1,5 @@
 "use client";
-
+ 
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -63,7 +63,7 @@ export function AnimatedHero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
-            Delta Home Solutions. Professional home maintenance services in Lower Mainland.
+            Delta Exterior Cleaning and Pest Control. Professional home maintenance services in Lower Mainland.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">

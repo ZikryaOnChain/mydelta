@@ -5,7 +5,7 @@ import { services } from "@/data/services";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Our Services - Delta Home Solutions",
+  title: "Our Services - Delta Exterior Cleaning and Pest Control",
   description: "Professional home maintenance services in Vancouver",
 };
 
