@@ -41,8 +41,8 @@ export function Navbar() {
 
           {/* Contact Button */}
           <div className="hidden md:block">
-            <Button as="a" href="tel:+1234567890" variant="outline">
-              (123) 456-7890
+            <Button as="a" href="tel:+17808185651" variant="outline">
+              (780) 818-5651
             </Button>
           </div>
 
@@ -85,11 +85,11 @@ export function Navbar() {
             ))}
             <Button
               as="a"
-              href="tel:+1234567890"
+              href="tel:+17808185651"
               variant="outline"
               className="w-full"
             >
-              (123) 456-7890
+              (780) 818-5651
             </Button>
           </div>
         )}
