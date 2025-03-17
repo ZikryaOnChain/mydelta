@@ -5,7 +5,6 @@ import Image from "next/image";
 import NavHeader from "@/components/blocks/nav-header";
 import { BackButton } from "@/components/ui/back-button";
 import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
 
 export function Header() {
   const pathname = usePathname();
