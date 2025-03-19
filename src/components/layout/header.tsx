@@ -39,7 +39,7 @@ export function Header() {
               <BackButton className="hidden md:flex" />
             )}
             <a
-              href="tel:+17808185651"
+              href="tel:+16043577171"
               className="flex items-center h-10 md:h-12 px-4 py-2 md:px-5 md:py-3 rounded-full border-2 border-[#1FB8BF] bg-black text-white hover:bg-[#1FB8BF] transition-colors no-underline whitespace-nowrap text-sm md:text-base uppercase"
             >
               <svg
@@ -55,7 +55,7 @@ export function Header() {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              <span className="hidden md:inline">(780) 818-5651</span>
+              <span className="hidden md:inline">(604) 357-7171</span>
               <span className="md:hidden">CALL</span>
             </a>
           </div>
